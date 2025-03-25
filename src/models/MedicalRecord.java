@@ -5,18 +5,38 @@ import java.util.List;
 
 /**
  * Clasa care reprezintă dosarul medical al unui pacient.
- * Stochează istoricul consultațiilor și tratamentelor pacientului.
+ * Stochează istoricul consultațiilor, tratamentelor și diagnosticul curent.
  */
 public class MedicalRecord {
-    private List<String> consultations; // Listă cu toate consultațiile pacientului
-    private List<String> treatments; // Listă cu tratamentele administrate pacientului
+    private String diagnosis; // Diagnosticul curent al pacientului
+    private List<String> consultations; // Lista tuturor consultațiilor pacientului
+    private List<String> treatments; // Lista tratamentelor administrate pacientului
 
     /**
-     * Constructor care inițializează listele goale pentru consultații și tratamente.
+     * Constructor care inițializează un dosar medical gol.
      */
     public MedicalRecord() {
+        this.diagnosis = "Unknown"; // Diagnosticul implicit
         this.consultations = new ArrayList<>();
         this.treatments = new ArrayList<>();
+    }
+
+    /**
+     * Setează un nou diagnostic pentru pacient.
+     *
+     * @param diagnosis Noul diagnostic
+     */
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    /**
+     * Returnează diagnosticul actual al pacientului.
+     *
+     * @return Diagnosticul pacientului
+     */
+    public String getDiagnosis() {
+        return diagnosis;
     }
 
     /**
@@ -58,11 +78,12 @@ public class MedicalRecord {
     /**
      * Suprascrie metoda toString() pentru a returna un rezumat al dosarului medical.
      *
-     * @return String cu detalii despre consultații și tratamente
+     * @return String cu detalii despre diagnosticul curent, consultații și tratamente
      */
     @Override
     public String toString() {
         return "Medical Record:\n" +
+                "Diagnosis: " + diagnosis + "\n" +
                 "Consultations: " + consultations + "\n" +
                 "Treatments: " + treatments;
     }

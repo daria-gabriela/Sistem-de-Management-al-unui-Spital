@@ -31,6 +31,8 @@ public class Patient {
         this.medicalRecord = new MedicalRecord(); // Se inițializează un dosar medical gol
     }
 
+
+
     // Getters - metode care returnează valorile atributelor private
 
     public int getId() {

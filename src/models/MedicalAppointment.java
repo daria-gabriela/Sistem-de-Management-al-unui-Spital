@@ -1,6 +1,6 @@
 package models;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Reprezintă o programare medicală.
@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 public class MedicalAppointment {
     private Patient patient;
     private Doctor doctor;
-    private LocalDateTime appointmentDate;
+    private Date appointmentDate;
 
-    public MedicalAppointment(Patient patient, Doctor doctor, LocalDateTime appointmentDate) {
+    public MedicalAppointment(Patient patient, Doctor doctor, Date appointmentDate) {
         this.patient = patient;
         this.doctor = doctor;
         this.appointmentDate = appointmentDate;
@@ -18,7 +18,7 @@ public class MedicalAppointment {
 
     public Patient getPatient() { return patient; }
     public Doctor getDoctor() { return doctor; }
-    public LocalDateTime getAppointmentDate() { return appointmentDate; }
+    public Date getAppointmentDate() { return appointmentDate; }
 
     @Override
     public String toString() {
